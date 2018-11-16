@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import CounterApp from './src/CounterApp'
@@ -14,6 +13,12 @@ const reducer = (state = initialState, action) => {
       return {counter: state.counter + 1}
     case 'DECREASE_COUNTER':
       return {counter: state.counter - 1}
+    case 'DUPLICATE':
+    return {counter: state.counter * 2}
+    case 'DIVIDE':
+      return {counter: state.counter / 2}
+    case 'RESTART':
+      return {counter: 0}
   }
   return state
 }
@@ -29,12 +34,3 @@ export default class App extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eee',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

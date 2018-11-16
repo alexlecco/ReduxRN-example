@@ -17,6 +17,21 @@ class CounterApp extends Component {
             <Text style={{ fontSize: 20 }}>Más</Text>
           </TouchableOpacity>
         </View>
+
+        <View style={{ flexDirection: 'row', width: 200, justifyContent: 'space-around' }}>
+          <TouchableOpacity onPress={() => this.props.duplicate()}>
+            <Text style={{ fontSize: 20 }}>Duplicar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.divide()}>
+            <Text style={{ fontSize: 20 }}>Dividir</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={{ flexDirection: 'row', width: 200, justifyContent: 'space-around' }}>
+          <TouchableOpacity onPress={() => this.props.restart()}>
+            <Text style={{ fontSize: 20 }}>Restaurar</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -32,6 +47,9 @@ function mapDispatchToProps(dispatch) {
     return {
         increaseCounter: () => dispatch({ type: 'INCREASE_COUNTER' }),
         decreaseCounter: () => dispatch({ type: 'DECREASE_COUNTER' }),
+        duplicate: () => dispatch({ type: 'DUPLICATE' }),
+        divide: () => dispatch({ type: 'DIVIDE' }),
+        restart: () => dispatch({ type: 'RESTART' }),
     }
 }
 
