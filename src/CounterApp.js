@@ -10,15 +10,15 @@ class CounterApp extends Component {
           <TouchableOpacity onPress={() => this.props.decreaseCounter()}>
             <Text style={{ fontSize: 20 }}>Menos</Text>
           </TouchableOpacity>
-
-          <Text style={{ fontSize: 20 }}>{this.props.counter}</Text>
+          
+          <Text style={{ fontSize: 60 }}>{this.props.counter}</Text>
           
           <TouchableOpacity onPress={() => this.props.increaseCounter()}>
             <Text style={{ fontSize: 20 }}>Más</Text>
           </TouchableOpacity>
         </View>
-
-        <View style={{ flexDirection: 'row', width: 200, justifyContent: 'space-around' }}>
+        
+        <View style={{ flexDirection: 'row', width: 200, justifyContent: 'space-between' }}>
           <TouchableOpacity onPress={() => this.props.duplicate()}>
             <Text style={{ fontSize: 20 }}>Duplicar</Text>
           </TouchableOpacity>
